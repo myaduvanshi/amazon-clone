@@ -3,6 +3,7 @@ import amazon from "../Images/amazonLogo.svg";
 import location from "../Images/location.svg";
 import seacrh from "../Images/seacrh.svg";
 import hamburgerMenu from "../Images/hamburgerMenu.svg";
+import cart from "../Images/shopping-cart.png"
 import { Link } from "react-router-dom";
 import './Header.css'
 function Header() {
@@ -25,8 +26,8 @@ function Header() {
             <span className="w-56 text-sm font-bold">Update location</span>
           </div>
         </div>
-        <div className="w-80 h-10 flex -mt-2">
-          <div className="w-16 h-full ">
+        <div className="w-96 h-10 flex -mt-2 ">
+          <div className="w-14 h-full ">
             <select
               className="w-full h-full text-black border-none rounded-l-sm bg-gray-100 px-2"
               name="category"
@@ -127,6 +128,17 @@ function Header() {
           </div>
           </div>
         </div>
+        <div>
+          <div className="ml-4 w-14">
+            <p className="text-sm leading-none">
+            Returns <span className="font-bold text-xs">& Orders</span>
+            </p>
+            </div>
+        </div>
+            <div className="ml-4">
+              <img className="w-10 h-8" src={cart} alt="" />
+              <p className="-mt-10 ml-4 text-orange-400 text-xl font-bold">0</p> 
+            </div>
       </div>
       <div className="bg-[#232F3E] w-full h-10 px-4 py-4 text-white flex items-center">
         <nav>
