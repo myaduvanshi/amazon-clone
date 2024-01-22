@@ -183,7 +183,7 @@ function Header() {
             </div>
             <div className="dropdown-content text-black list-none mt-1 -ml-8 w-52 h-auto rounded-md">
               <div className="flex justify-center w-full">
-                <Link to="/">
+                <Link to="/register">
                   {" "}
                   <button className="bg-[#FFD814] w-32 p-2 rounded-md">
                     Sign in
