@@ -1,12 +1,21 @@
-import React from "react";
+import React,{useEffect} from "react";
 import amazon from "../Images/amazonLogo.svg";
 import location from "../Images/location.svg";
 import seacrh from "../Images/seacrh.svg";
 import hamburgerMenu from "../Images/hamburgerMenu.svg";
-import cart from "../Images/shopping-cart.png";
+import cartImg from "../Images/shopping-cart.png";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getCartTotal } from "../../app/features/cartSlice";
 import "./Header.css";
 function Header() {
+
+  const {cart, totalQuantity} = useSelector((state)=> state.allCart)
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCartTotal())
+  }, [cart])
+  
   return (
     <>
       <header>
@@ -208,8 +217,12 @@ function Header() {
             </div>
           </div>
           <div className="ml-4">
-            <img className="w-10 h-8" src={cart} alt="" />
-            <p className="-mt-10 ml-4 text-orange-400 text-xl font-bold">0</p>
+            <Link to="/cart">
+            <img className="w-10 h-8" src={cartImg} alt="" />
+            <p className="-mt-10 ml-4 text-orange-400 text-xl font-bold">
+              {totalQuantity}
+            </p>
+            </Link>
           </div>
         </div>
         <div className="bg-[#232F3E] w-full h-10 px-4 py-4 text-white flex items-center">
