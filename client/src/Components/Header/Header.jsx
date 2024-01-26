@@ -15,7 +15,9 @@ function Header() {
       bg-[#131921] h-16 px-3 py-4 w-full flex  align-middle text-white"
         >
           <div className="flex h-full ">
+            <Link>
             <img className="h-8 w-26" src={amazon} alt="" />
+            </Link>
             <span className="text-sm">.in</span>
           </div>
           <div className="flex align-middle  ml-2 -mt-4">
@@ -183,7 +185,7 @@ function Header() {
             </div>
             <div className="dropdown-content text-black list-none mt-1 -ml-8 w-52 h-auto rounded-md">
               <div className="flex justify-center w-full">
-                <Link to="/register">
+                <Link to="/signin">
                   {" "}
                   <button className="bg-[#FFD814] w-32 p-2 rounded-md">
                     Sign in
@@ -192,7 +194,7 @@ function Header() {
               </div>
               <div className="flex text-xs justify-center mt-2">
                 <p className="px-1">New customer? </p>
-                <Link to="" className="hover:text-orange-500 text-blue-500">
+                <Link to="/register" className="hover:text-orange-500 text-blue-500">
                   Start here.
                 </Link>
               </div>

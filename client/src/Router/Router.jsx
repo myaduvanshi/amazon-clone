@@ -4,6 +4,7 @@ import Root from '../Root'
 import Home from '../Components/Home/Home'
 import RegisterPage from '../Pages/RegisterPage'
 import LoginPage from '../Pages/LoginPage'
+import Cart from '../Pages/Cart'
 
 function Router() {
   const router = createBrowserRouter(
@@ -12,6 +13,7 @@ function Router() {
         <Route path='' element={<Home />} />
         <Route path='/register' element={<RegisterPage/>}/>
         <Route path='/signin' element={<LoginPage/>}/>
+        <Route path='/cart' element={<Cart/>}/>
       </Route>
     )
   )
