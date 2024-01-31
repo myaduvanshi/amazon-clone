@@ -1,8 +1,16 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import amazonImg from "./Image/amazonImg.png"
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 function RegisterPage() {
+    useEffect(() => {
+      axios.post('/register')
+      .then((response) =>{
+        
+      })
+    })
+    
   return (
     <>
     <div className='flex justify-center' >
@@ -15,7 +23,7 @@ function RegisterPage() {
     </div>
     <div className='flex justify-center'>
 
-    <form action="" className='
+    <form method='POST' className='
     border border-solid
     w-1/3 p-4 my-4 rounded-lg border-gray-300
     '>

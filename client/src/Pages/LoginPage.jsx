@@ -66,7 +66,7 @@ function RegisterPage() {
           <div className="flex text-sm">
             <p className="mx-1">New to Amazon? </p>
             <Link
-              to="/register"
+              to="/user/register"
               className="
 text-sky-500
 hover:text-orange-500

@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "../../app/features/cartSlice";
-
 function ProductCart() {
   const items = useSelector((state) => state.allCart.items);
 
