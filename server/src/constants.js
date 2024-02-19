@@ -1,1 +1,1 @@
-export const DB_NAME = "amazonServer"
+export const DB_NAME = "amazon"

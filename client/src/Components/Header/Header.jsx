@@ -203,7 +203,7 @@ function Header() {
               </div>
               <div className="flex text-xs justify-center mt-2">
                 <p className="px-1">New customer? </p>
-                <Link to="/register" className="hover:text-orange-500 text-blue-500">
+                <Link to="/user-register" className="hover:text-orange-500 text-blue-500">
                   Start here.
                 </Link>
               </div>

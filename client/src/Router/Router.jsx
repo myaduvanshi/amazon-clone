@@ -11,7 +11,7 @@ function Router() {
     createRoutesFromElements(
       <Route path='/' element={<Root />}>
         <Route path='' element={<Home />} />
-        <Route path='/register' element={<RegisterPage/>}/>
+        <Route path='/user-register' element={<RegisterPage/>}/>
         <Route path='/signin' element={<LoginPage/>}/>
         <Route path='/cart' element={<CartPage/>} />
       </Route>

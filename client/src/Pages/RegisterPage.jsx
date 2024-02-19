@@ -5,10 +5,10 @@ import axios from 'axios'
 
 function RegisterPage() {
     useEffect(() => {
-      axios.post('/register')
-      .then((response) =>{
+      axios.get('/register')
+      // .then((response) =>{
         
-      })
+      // })
     })
     
   return (
@@ -65,7 +65,9 @@ function RegisterPage() {
         </p>
         <button className='bg-[#FFD814]
         w-full my-4 p-1 rounded-md
-        '>
+        '
+
+        >
             Verify mobile number
         </button>
         <div className='flex text-sm'>

@@ -1,7 +1,7 @@
 import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { User } from "../models/user.model.js";
-import { uploadOnCloudinary } from "../utils/cloudinary.js";
+// import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import jwt from "jsonwebtoken";
 
@@ -36,27 +36,29 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new ApiError(400, "Email is required");
   }
   if (phone === "") {
-    throw new ApiError(400, "Phone Number is required");
+    throw new ApiError(400, "Phone is required");
   }
   if (password === "") {
     throw new ApiError(400, "Password is required");
   }
 
-
+ 
 
   const existedUser = await User.findOne({
-    $or: [{ phone }],
+    $or: [{ phone }, { email }],
   });
 
   if (existedUser) {
     throw new ApiError(409, "User with email or phone already exixts");
   }
 
+  
+
   const user = await User.create({
     fullName,
     email,
     password,
-    phone
+    phone,
   });
 
   const createUser = await User.findById(user._id).select(
@@ -75,7 +77,7 @@ const loginUser = asyncHandler(async (req, res) => {
  
 
   const { email, phone, password } = req.body;
-  if (!phone && !email) {
+  if (!(phone || email)) {
     throw new ApiError(400, "phone or email is required");
   }
   const user = await User.findOne({
